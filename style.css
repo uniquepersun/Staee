@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: #ffbe5c;
+}
+.header1{
+    background: #d86a15;
+    color: #fff;
+    padding: 0;
+    margin-bottom: 10px;    
+    text-align: center;
+    border: 5px solid #ffbe5c;
+    border-radius: 10px;
+}
+form{
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #f3f3f3;
+}
+form > * {
+    margin-bottom: 10px;
+}
+span{
+    display: block;
+    outline: 2px solid rgb(110, 52, 185);
+    border-radius: 12px;
+    padding: 3px;
+    margin-top: 15px;
+
+}
+.paradiv > :first-child {
+    color: red;
+    background-color: yellow;
+}
+div p{
+    color: white;
+    background-color: blue;
+}
