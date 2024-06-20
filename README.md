@@ -1,2 +1,2 @@
-# sigma-course
+# sigma-site
  
