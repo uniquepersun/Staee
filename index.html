@@ -11,22 +11,22 @@
 
 <body>
     <header>
-        <h1>join the waiting list for early access</h1>
+        <nav><h1>join the waiting list for early access</h1></nav>
     </header>
     <main>
         
         <p>This is a form for early commers!!</p>
         <form action="" method="post" class="form">
-            <div class="namediv">
+            <div class="name">
                 <label for="name">Enter your name:</label>
-                <input type="text" name="name" id="name" required>
+                <input type="text" name="name" id="name" autocomplete="name" required>
             </div>
-            <div class="emaildiv">
+            <div class="email">
                 <label for="email">Enter your email:</label>
-                <input type="email" name="email" id="email" required>
+                <input type="email" name="email" id="email" autocomplete="email" required>
             </div>
             <div>
-                <button type="submit" onclick="" value="submit">Let's get started</button>
+                <button type="submit" onclick="downloadCSV()" value="submit">Let's goooo!!</button>
             </div>
         </form>
     </main>
