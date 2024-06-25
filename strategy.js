@@ -1,16 +1,16 @@
 function sendData(name, email, uniqueId) {
-    fetch('/AKfycbzKOg3ltVpNs30aPfYTkJBXYKBp_eh7WAv311OFgYjw',
+    fetch('https://script.google.com/macros/s/AKfycbxxwf2QLMBxY3rwoYuKHEvwY7j4Qf3uOk2f1H8e2GTyXWZto3AGZRRTIQWtgdaphPP5zg/exec',
         {
-        method: 'POST',
-        body: JSON.stringify({ name, email, uniqueId }),
-    })
+            method: 'POST',
+            body: JSON.stringify({ name, email, uniqueId }),
+        })
         .then(response => response.json())
         .then(data => {
             console.log('Data sent successfully:', data);
         }) //success message/error message
         .catch(error)
-        {
-            console.error('Error processing data:', error);
+    {
+        console.error('Error processing data:', error);
         res.status(500).send('Internal Server Error');
     }
 }
