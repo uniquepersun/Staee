@@ -6,33 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First comers!!</title>
     <link rel="stylesheet" href="makeup.css">
-    <script src="strategy.js"></script>
 </head>
-
 <body>
     <header>
-        <nav><h1>join the waiting list for early access</h1></nav>
+        <nav>
+            <h1>join the waiting list for early access</h1>
+        </nav>
     </header>
-    <main>
-        
+    <main class="container">
         <p>This is a form for early commers!!</p>
-        <form action="" method="post" class="form">
-            <div class="name">
-                <label for="name">Enter your name:</label>
-                <input type="text" name="name" id="name" autocomplete="name" required>
-            </div>
-            <div class="email">
-                <label for="email">Enter your email:</label>
-                <input type="email" name="email" id="email" autocomplete="email" required>
-            </div>
-            <div>
-                <button type="submit" onclick="downloadCSV()" value="submit">Let's goooo!!</button>
-            </div>
-        </form>
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <input type="hidden" id="uniqueId" name="uniqueId">
+            <button type="submit">Lets go!!</button>
+          </form>
     </main>
     <footer>
         <span>&copy; 2069!!</span>
     </footer>
+    <script src="strategy.js"></script>
 </body>
-
 </html>

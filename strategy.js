@@ -1,43 +1,37 @@
-function downloadCSV() {
-    const form = document.getElementById("myForm");
-    const formData = new FormData(form);
-    let csvContent = "data:text/csv;charset=utf-8,";
+function sendData(name, email, uniqueId) {
+    fetch('/AKfycbzKOg3ltVpNs30aPfYTkJBXYKBp_eh7WAv311OFgYjw', {
+        method: 'POST',
+        body: JSON.stringify({ name, email, uniqueId }),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Data sent successfully:', data);
+        })//success message/error message
+        .catch(error => console.error('Error sending data:', error));
+}
+function generateUniqueId() {
+    if (window.crypto && window.crypto.randomUUID) {
+        return window.crypto.randomUUID();}
 
-    // Add headers (column names)
-    csvContent += "Name,Email\n";
-
-    // Loop through form data and add values
-    for (const [key, value] of formData.entries()) {
-        csvContent += value + ",";
+    else {
+            return generateFallbackUniqueId();//for older browsers
+        }
     }
 
-    // Remove the last comma
-    csvContent = csvContent.slice(0, -1);
+    function generateFallbackUniqueId() {
+        return 'id-' + Date.now() + '-' + Math.random().toString(36).substring(2, 15);
+    }
 
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "form_data.csv");
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-}
-function uploadCSV() {
-    const fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    fileInput.accept = '.csv';
-    fileInput.onchange = function () {
-        const file = this.files[0];
-        if (file && file.type === "text/csv") {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const csvData = e.target.result;
-                google.script.run.withSuccessHandler(uploadData).processCSV(csvData);
-            };
-            reader.readAsText(file);
-        } else {
-            alert("Invalid file format. Please upload a CSV file.");
-        }
-    };
-    fileInput.click();
-}
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const form = document.getElementById('myForm');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const uniqueId = generateUniqueId();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            document.getElementById('uniqueId').value = uniqueId;
+            sendData(name, email, uniqueId);
+        });
+
+    });
