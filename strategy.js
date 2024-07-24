@@ -20,7 +20,7 @@ function generateUniqueId() {
     }
 
     else {
-        return generateFallbackUniqueId();//for older browsers
+        return generateFallbackUniqueId();//spport old browsers
     }
 }
 
