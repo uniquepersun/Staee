@@ -9,3 +9,5 @@ it is a early access form on which I'm working rn, it will be available to you i
 
 ## USAGE
 it is available through github pages but it won't submit requests as of now hosted on github pages [here.](https://uniquepersun.github.io/Staee/)
+here is a [screenshot](https://github.com/user-attachments/assets/eeb1e691-754b-4998-aa9e-b1f135b14cee)
+
