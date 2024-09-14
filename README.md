@@ -8,4 +8,4 @@ it is a early access form on which I'm working rn, it will be available to you i
 
 
 ## USAGE
-it is available through github pages but it won't submit requests as of now hosted on github pages [here.](https://aistudio.google.com/)
+it is available through github pages but it won't submit requests as of now hosted on github pages [here.](https://uniquepersun.github.io/Staee/)
